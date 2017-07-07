@@ -8,7 +8,7 @@ normal=`tput sgr0`
 printf "\n${bold}    ************************ Cuidado *************************${normal}"
 printf "\n${bold}    *   ES NECESARIO DE UN GRAPHQL SERVER EN EL PUERTO 4000  *${normal}"
 printf "\n${bold}    *  CORRER: npm install && DBUSER=xxx DBPSW=xxx npm start *${normal}"
-printf "\n${bold}    *          Dentro de ../graphql-server *${normal}        *"
+printf "\n${bold}    *          Dentro de ../graphql-server                   *${normal}"
 printf "\n${bold}    **********************************************************${normal} \n"
 
 printf "\n${bold}==> ********** Construir imagen de docker **********${normal} \n"
