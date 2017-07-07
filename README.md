@@ -1,8 +1,4 @@
-# GraphQL Connections. Intro Relay
-
-- Introduccion a GraphQL connections
-- Paginacion basada en cursor pattern
-- Introduccion a Relay Framework
+# GraphQL 
 
 ## Correr servidor localmente
 
@@ -22,10 +18,7 @@ DBUSER=xxxxxx DBPSW=xxxxxx npm start
 cd relay-modern-app
 ```
 ```
-npm intall
-```
-```
-npm start
+bash start.sh
 ```
 
 ## Links utiles
