@@ -1,13 +1,7 @@
-const {
-  GraphQLObjectType,
-  GraphQLList,
-  GraphQLSchema,
-  GraphQLString,
-  GraphQLNonNull
-} = require('graphql');
-
+const { GraphQLObjectType, GraphQLList, GraphQLSchema, GraphQLString, GraphQLNonNull } = require('graphql');
+const { connectionArgs } = require('graphql-relay');
 const { categoryType } = require('./types/category');
-const { bookType } = require('./types/book');
+const { bookType, bookConnection } = require('./types/book');
 const { nodeField } = require('./node');
 
 const queryType = new GraphQLObjectType({
@@ -33,12 +27,15 @@ const queryType = new GraphQLObjectType({
       }
     },
     books: {
-      type: new GraphQLList(bookType),
-      args: {
-        categoryId: {
-          type: GraphQLString
-        }
-      }
+      type: bookConnection,
+      args: Object.assign(
+        {
+          categoryId: {
+            type: GraphQLString
+          }
+        },
+        connectionArgs
+      )
     },
     node: nodeField
   })

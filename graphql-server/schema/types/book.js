@@ -1,10 +1,6 @@
-const {
-  GraphQLObjectType,
-  GraphQLString,
-  GraphQLNonNull,
-  GraphQLID,
-  GraphQLList
-} = require('graphql');
+const { GraphQLObjectType, GraphQLString, GraphQLNonNull, GraphQLID, GraphQLList } = require('graphql');
+
+const { connectionDefinitions } = require('graphql-relay');
 
 const { categoryType } = require('./category');
 const { nodeInterface } = require('../node');
@@ -28,7 +24,7 @@ const bookType = new GraphQLObjectType({
     type: {
       type: GraphQLString,
       description: 'The book title.',
-      resolve: () => "BK"
+      resolve: () => 'BK'
     },
     author: {
       type: GraphQLString,
@@ -46,4 +42,7 @@ const bookType = new GraphQLObjectType({
   })
 });
 
+const { connectionType } = connectionDefinitions({ nodeType: bookType });
+
 exports.bookType = bookType;
+exports.bookConnection = connectionType;

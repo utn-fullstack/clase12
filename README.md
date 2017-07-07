@@ -6,7 +6,7 @@
 cd graphql-server
 ```
 ```
-npm intall
+npm install
 ```
 ```
 DBUSER=xxxxxx DBPSW=xxxxxx npm start
@@ -15,7 +15,7 @@ DBUSER=xxxxxx DBPSW=xxxxxx npm start
 ## Correr cliente localmente
 
 ```
-cd relay-modern-app
+cd relay-client
 ```
 ```
 bash start.sh
