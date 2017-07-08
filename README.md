@@ -58,11 +58,11 @@ yarn start
 
 ### Relay QueryRenderer
 
-https://facebook.github.io/relay/docs/query-renderer.html
+- https://facebook.github.io/relay/docs/query-renderer.html
 
 ### Relay FragmentContainer
 
-https://facebook.github.io/relay/docs/fragment-container.html
+- https://facebook.github.io/relay/docs/fragment-container.html
 
 ### Tools para implementacion de un server GraphQL compatible con Relay
 
