@@ -18,7 +18,19 @@ DBUSER=xxxxxx DBPSW=xxxxxx npm start
 
 ## Correr cliente localmente
 
-1- En caso de no tener Watchman instalado, start.sh levantara un Docker container con un shell para trabajar en el proyecto:
+Si ya tenes instalado Watchman en tu host, podes iniciar normalmente la app usando npm (o yarn)
+
+```
+cd relay-client
+```
+```
+npm install
+```
+```
+npm start
+```
+
+En caso de no tener Watchman instalado, start.sh levantara un Docker container con un shell para trabajar en el proyecto:
 
 ```
 cd relay-client
@@ -29,6 +41,7 @@ bash start.sh
 
 Una vez adentro del container:
 
+
 ```
 yarn install
 ```
@@ -36,14 +49,6 @@ yarn install
 yarn start
 ```
 
-2- Si ya tenes instalado Watchman en tu host, podes iniciar normalmente la app usando npm (o yarn)
-
-```
-npm install
-```
-```
-npm start
-```
 
 ## Links utiles
 
