@@ -34,9 +34,9 @@ const Book = ({ book }) =>
         By: {book.author}
       </p>
       <p>
-        {book.categories.edges.map(item =>
+        {book.categories.map(item =>
           <Label className={styles.catLabel} bsStyle="primary">
-            {item.node.label}
+            {item.label}
           </Label>
         )}
       </p>
@@ -51,6 +51,8 @@ const BookDetail = ({ books, match }) =>
       bookId: match && match.params.bookId
     }}
     render={({ error, props }) => {
+      console.log(props);
+
       if (error)
         return (
           <Row>

@@ -8,7 +8,7 @@
 
 /*::
 import type {ConcreteFragment} from 'relay-runtime';
-export type BooksListItem_book = {|
+export type BookRow_book = {|
   +id: string;
   +title: ?string;
   +author: ?string;
@@ -21,7 +21,7 @@ const fragment /*: ConcreteFragment*/ = {
   "argumentDefinitions": [],
   "kind": "Fragment",
   "metadata": null,
-  "name": "BooksListItem_book",
+  "name": "BookRow_book",
   "selections": [
     {
       "kind": "ScalarField",

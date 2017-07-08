@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 9254a955971f65e39d283096fddc0a49
+ * @relayHash 362799c386b125c4d3e8c3ab1986d3e1
  */
 
 /* eslint-disable */
@@ -9,7 +9,7 @@
 
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
-export type BooksListQueryResponse = {|
+export type AdminPageQueryResponse = {|
   +books: ?{|
     +edges: ?$ReadOnlyArray<?{|
       +node: ?{| |};
@@ -20,7 +20,7 @@ export type BooksListQueryResponse = {|
 
 
 /*
-query BooksListQuery(
+query AdminPageQuery(
   $categoryId: String
   $count: Int!
   $cursor: String
@@ -28,14 +28,14 @@ query BooksListQuery(
   books(first: $count, categoryId: $categoryId, after: $cursor) {
     edges {
       node {
-        ...BooksListItem_book
+        ...BookRow_book
         id
       }
     }
   }
 }
 
-fragment BooksListItem_book on Book {
+fragment BookRow_book on Book {
   id
   title
   author
@@ -67,7 +67,7 @@ const batch /*: ConcreteBatch*/ = {
     ],
     "kind": "Fragment",
     "metadata": null,
-    "name": "BooksListQuery",
+    "name": "AdminPageQuery",
     "selections": [
       {
         "kind": "LinkedField",
@@ -114,7 +114,7 @@ const batch /*: ConcreteBatch*/ = {
                 "selections": [
                   {
                     "kind": "FragmentSpread",
-                    "name": "BooksListItem_book",
+                    "name": "BookRow_book",
                     "args": null
                   }
                 ],
@@ -132,7 +132,7 @@ const batch /*: ConcreteBatch*/ = {
   "id": null,
   "kind": "Batch",
   "metadata": {},
-  "name": "BooksListQuery",
+  "name": "AdminPageQuery",
   "query": {
     "argumentDefinitions": [
       {
@@ -155,7 +155,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ],
     "kind": "Root",
-    "name": "BooksListQuery",
+    "name": "AdminPageQuery",
     "operation": "query",
     "selections": [
       {
@@ -240,7 +240,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query BooksListQuery(\n  $categoryId: String\n  $count: Int!\n  $cursor: String\n) {\n  books(first: $count, categoryId: $categoryId, after: $cursor) {\n    edges {\n      node {\n        ...BooksListItem_book\n        id\n      }\n    }\n  }\n}\n\nfragment BooksListItem_book on Book {\n  id\n  title\n  author\n  image\n}\n"
+  "text": "query AdminPageQuery(\n  $categoryId: String\n  $count: Int!\n  $cursor: String\n) {\n  books(first: $count, categoryId: $categoryId, after: $cursor) {\n    edges {\n      node {\n        ...BookRow_book\n        id\n      }\n    }\n  }\n}\n\nfragment BookRow_book on Book {\n  id\n  title\n  author\n  image\n}\n"
 };
 
 module.exports = batch;
